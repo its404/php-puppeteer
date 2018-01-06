@@ -62,18 +62,18 @@ __PDF by URL__
 You can generate PDF by URL through `pdf` function:
 
 ~~~
-	public function actionTest1()
-    {
-        $params = [
-            "url" => "https://www.highcharts.com/demo/line-basic",
-        ];
-        $browser = new Browser();
-        $browser->isDebug = true;
-        $content = $browser->pdf($params);
-        
-        header("Content-type:application/pdf");
-        echo $content;
-    }
+public function actionTest1()
+{
+	$params = [
+		"url" => "https://www.highcharts.com/demo/line-basic",
+	];
+	$browser = new Browser();
+	$browser->isDebug = true;
+	$content = $browser->pdf($params);
+	
+	header("Content-type:application/pdf");
+	echo $content;
+}
 ~~~
 
 You can set any parameter in `$params` to override the default values
@@ -83,17 +83,17 @@ __PDF by HTML__
 You can generate PDF by html code through `pdf` function:
 
 ~~~
-	public function actionTest2()
-    {
-        $params = [
-            "html" => "<h1>Hello Wolrd</h1>"
-        ];
-        $browser = new Browser();
-        $content = $browser->pdf($params);
-        
-        header("Content-type:application/pdf");
-        echo $content;
-    }
+public function actionTest2()
+{
+	$params = [
+		"html" => "<h1>Hello Wolrd</h1>"
+	];
+	$browser = new Browser();
+	$content = $browser->pdf($params);
+	
+	header("Content-type:application/pdf");
+	echo $content;
+}
 ~~~
 > **Debug** The class `Browser` has one parameter `$isDebug`, it would be debug mode if it's `true`, detailed error messages would be returned from `pdf` function if an error happened during Puppeteer running.
 
