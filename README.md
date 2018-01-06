@@ -98,4 +98,7 @@ You can generate PDF by html code through `pdf` function:
 > **Debug** The class `Browser` has one parameter `$isDebug`, it would be debug mode if it's `true`, detailed error messages would be returned from `pdf` function if an error happened during Puppeteer running.
 
 
+# More Examples?
+
+You can find more examples from [here](https://github.com/its404/php-puppeteer/tree/master/examples)
 
