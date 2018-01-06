@@ -48,7 +48,7 @@ In `font.php`, 3 kind of font files are imported
 ```
 
 # Output
-Here is the [output PDF file](https://github.com/its404/php-puppeteer/examples/font-examples/font.pdf)
+Here is the [output PDF file](https://github.com/its404/php-puppeteer/blob/master/examples/font-example/font.pdf)
 
 # Troubleshooting
 
