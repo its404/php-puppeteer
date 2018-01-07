@@ -36,18 +36,23 @@ The library has set some default parameter values to support basic features, you
 __Sample parameter array:__
 
 ~~~
-$pamaters = [
-	"url" => "https://google.com",
-	"displayHeaderFooter" => true,
-	"margin" => [
-		'top' => '10mm',
-     	'right' => '10mm',
-     	'bottom' => '10mm',
-     	'left' => '10mm',
-	],
-	"printBackground" => true
+$config  = [
+    'html' => "<h1>Hello World</h1>",
+	'pdf' => [
+		'path' => '/tmp/test.pdf',
+		'margin' => [
+			'top' => '10mm',
+			'right' => '10mm',
+			'bottom' => '10mm',
+			'left' => '10mm',
+		]
+	]
 ];
 ~~~
+
+> **Note:**
+1. If both `$config['pdf']['html']` and $config['pdf']['url'] are set, `html` will be picked up. 
+2. If `$config['pdf']['path']` is not set, will return pdf data
 
 ## Import
 You need to import this namespace at the top of your PHP class
@@ -64,19 +69,19 @@ You can generate PDF by URL through `pdf` function:
 ~~~
 public function actionTest1()
 {
-	$params = [
+	$config = [
 		"url" => "https://www.highcharts.com/demo/line-basic",
 	];
 	$browser = new Browser();
 	$browser->isDebug = true;
-	$content = $browser->pdf($params);
+	$content = $browser->pdf($config);
 	
 	header("Content-type:application/pdf");
 	echo $content;
 }
 ~~~
 
-You can set any parameter in `$params` to override the default values
+You can set any parameter in `$config` to override the default values
 
 __PDF by HTML__
 
@@ -85,11 +90,11 @@ You can generate PDF by html code through `pdf` function:
 ~~~
 public function actionTest2()
 {
-	$params = [
+	$config = [
 		"html" => "<h1>Hello Wolrd</h1>"
 	];
 	$browser = new Browser();
-	$content = $browser->pdf($params);
+	$content = $browser->pdf($config);
 	
 	header("Content-type:application/pdf");
 	echo $content;
@@ -97,6 +102,31 @@ public function actionTest2()
 ~~~
 > **Debug** The class `Browser` has one parameter `$isDebug`, it would be debug mode if it's `true`, detailed error messages would be returned from `pdf` function if an error happened during Puppeteer running.
 
+__PDF to specific path__
+
+You can generate PDF to a specific path by setting `$config['pdf']['path']`
+
+~~~
+public function actionTest3()
+{
+	$config = [
+		"html" => "<h1>Hello Wolrd</h1>",
+		'pdf' => [
+			'path' => '/tmp/test.pdf',
+		]
+	];
+	$browser = new Browser();
+	$browser->isDebug = true;
+	$result = $browser->pdf($params);
+	
+	if (isset($result['returnVal'])&& $result['returnVal'] == 0) {
+		echo "PDF generated successfully";
+	} else {
+		echo "Failed to generate PDF";
+		var_dump($result['output']);
+	}
+}
+~~~
 
 # More Examples?
 

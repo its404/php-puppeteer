@@ -9,17 +9,6 @@ async function render() {
 	emulateScreenMedia: true,
 	ignoreHttpsErrors: false,
 	html: null,
-	viewport: {
-	  width: 1024,
-	  height: 1200,
-	},
-	goto: {
-	  waitUntil: ['load', 'domcontentloaded', 'networkidle0', 'networkidle2']
-	},
-	pdf: {
-	  format: 'A4',
-      printBackground: true
-    }
   };
   
   const params = Object.assign({}, defaultParams, requestParams);
