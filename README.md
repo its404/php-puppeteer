@@ -128,6 +128,14 @@ public function actionTest3()
 }
 ~~~
 
+__Start a new page on PDF__
+
+You can add following html code in the html where you'd like to start a new page for PDF.
+
+~~~
+<div style="page-break-after:always;"></div>
+~~~
+
 # More Examples?
 
 You can find more examples from [here](https://github.com/its404/php-puppeteer/tree/master/examples)
