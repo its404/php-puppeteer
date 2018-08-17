@@ -55,8 +55,8 @@ $config  = [
 ~~~
 
 > **Note:**
-1. If both `$config['pdf']['html']` and $config['pdf']['url'] are set, `html` will be picked up. 
-2. If `$config['pdf']['path']` is not set, will return pdf data
+> 1. If both `$config['pdf']['html']` and $config['pdf']['url'] are set, `html` will be picked up. 
+> 2. If `$config['pdf']['path']` is not set, will return pdf data
 
 ## Import
 You need to import this namespace at the top of your PHP class
