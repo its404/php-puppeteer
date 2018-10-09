@@ -1,6 +1,6 @@
 PHP Puppeteer
 ===========
-This project provides the ability to generate PDF/PNG with [Puppeteer](https://github.com/GoogleChrome/puppeteer) in PHP
+This project provides the ability to generate PDF with [Puppeteer](https://github.com/GoogleChrome/puppeteer) in PHP
 
 - PHP 5 Compatible
 - No Dependent Package
