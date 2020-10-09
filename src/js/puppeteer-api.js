@@ -26,7 +26,7 @@ async function render() {
   try {
     await page.setViewport(params.viewport);
     if (params.emulateScreenMedia) {
-      await page.emulateMedia('screen');
+      await page.emulateMediaType('screen');
     }
     params.cookies.map(async (cookie) => {
       await page.setCookie(cookie);
